@@ -34,7 +34,7 @@ public class ApiTest {
 
     @Test
     public void firstTask(){
-        RestAssured.baseURI = "https://swapi.co/api/";
+        RestAssured.baseURI = "https://swapi.co";
         get("/api/stamps/").then()
                 .assertThat()
                 .statusCode(200)
@@ -112,8 +112,8 @@ public class ApiTest {
                 .contentType(ContentType.JSON)
                 .put(requestBody);
 
-        RestAssured.baseURI = "https://swapi.co/api/stamps/9/";
-        get("/api/stamps/").then()
+        RestAssured.baseURI = "https://swapi.co";
+        get("/api/stamps/9").then()
                 .assertThat()
                 .statusCode(200);
     }
